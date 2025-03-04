@@ -488,7 +488,7 @@ enable_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://raw.githubusercontent.com/56idc/3x-ui-alpine/main/x-ui-alpine.sh
+    wget -O /usr/bin/x-ui --no-check-certificate https://raw.githubusercontent.com/M1-J/3x-ui-alpine/main/x-ui-alpine.sh
     if [[ $? != 0 ]]; then
         echo ""
         LOGE "下载脚本失败, 请检查机器是否可以连接Github"
