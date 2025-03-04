@@ -79,6 +79,3 @@ bash <(curl -Ls https://raw.githubusercontent.com/M1-J/3x-ui-alpine/master/insta
 ```
 
 ---
-
-> 更多功能持续开发中，欢迎提交Issue反馈使用体验
-```
