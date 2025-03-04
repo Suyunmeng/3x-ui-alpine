@@ -1,52 +1,99 @@
-# 3x-ui-alpines项目说明: 
-本项目从3x-ui官方版本移植到Alpine系统, 面板功能与官方版本完全一致, 面板使用说明请参考官方文档.
-```
-https://github.com/MHSanaei/3x-ui
+```markdown
+# 3x-ui-alpine项目说明
+
+> 本项目基于 [56idc/3x-ui-alpine](https://github.com/56idc/3x-ui-alpine) 项目进行二次开发，原项目为Alpine系统移植方案的原创实现，此处为功能增强的二次创作版本。
+
+---
+
+## 项目背景
+本项目从3x-ui官方版本移植到Alpine系统，面板核心功能与官方版本完全一致，面板使用说明请参考官方文档：
 ```
 
-# 一键安装
+https://github.com/MHSanaei/3x-ui
+
 ```
+## 系统要求
+- 仅支持Alpine Linux 3.18+ 系统
+- 推荐使用纯净系统安装
+
+## 一键安装
+```bash
 apk add curl bash gzip
 bash <(curl -Ls https://raw.githubusercontent.com/M1-J/3x-ui-alpine/master/install_alpine.sh)
 ```
-# 官方功能移植列表:
-  1. Install - 安装: 已完成(2024/12/16)
-  2. Update - 更新: 已完成(2024/12/16)
-  3. Update Menu - 更新主菜单: 已完成(2024/12/16)
-  4. Legacy Version - 安装指定版本: 已完成(2024/12/16)
-  5. Uninstall - 卸载: 已完成(2024/12/16)
-  ---
-  6. Reset Username & Password & Secret Token - 重置用户名密码: 已完成(2024/12/16)
-  7. Reset Web Base Path - 重置面板路径: 已完成(2024/12/16)
-  8. Reset Settings  - 重置配置数据(用户名密码和面板路径不变): 已完成(2024/12/16)
-  9. Change Port - 重置面板端口: 已完成(2024/12/16)
-  10. View Current Settings - 查看服务配置: 已完成(2024/12/16)
-  ---
-  11. Start - 启动服务: 已完成(2024/12/16)
-  12. Stop - 停止服务: 已完成(2024/12/16)
-  13. Restart - 重启服务: 已完成(2024/12/16)
-  14. Check Status - 查看服务状态: 已完成(2024/12/16)
-  15. Logs Management - 查看日志: 开发中......
-  ---
-  16. Enable Autostart - 设置开机启动: 已完成(2024/12/16)
-  17. Disable Autostart - 关闭开机启动: 已完成(2024/12/16)
-  ---
-  18. SSL Certificate Management - ACME证书管理: 已完成(2024/12/16)
-  19. Cloudflare SSL Certificate - Cloudflare证书管理: 已完成(2024/12/16)
-  20. IP Limit Management - IP限制管理: 开发中......
-  21. Firewall Management - 防火墙管理: 开发中......
-  22. SSH Port Forwarding Management - SSH端口转发管理: 开发中......
-  ---
-  23. Enable BBR - BBR功能: 已完成(2024/12/16)
-  24. Update Geo Files - 更新Geo文件: 已完成(2024/12/16)
-  25. Speedtest by Ookla - 速度测试(Ookla): 开发中......
 
-## log 2024/12/16
-1. 翻译中文菜单
-2. 移植部分功能列表
-3. 同步官方版本v2.4.9
-## log 2024/12/21
-1. 同步官方版本v2.4.10
-## log 2024/12/28
+## 功能移植进度
+
+### 核心功能
+
+| 功能模块         | 状态     |
+| ---------------- | -------- |
+| Install - 安装   | ✅ 已完成 |
+| Update - 更新    | ✅ 已完成 |
+| Uninstall - 卸载 | ✅ 已完成 |
+
+### 进阶功能
+
+| 功能模块           | 状态                     |
+| ------------------ | ------------------------ |
+| SSL证书管理        | ✅ 已完成                 |
+| Cloudflare证书     | ✅ 已完成                 |
+| BBR加速            | ✅ 已完成                 |
+| **日志管理**       | ✅ 新增完成（2025/03/04） |
+| **自定义路径重置** | ✅ 新增完成（2025/03/04） |
+
+---
+
+##日志日志
+
+### 2025/03/04
+
+1. 新增完整的日志查看功能（支持实时日志追踪和历史日志查询）
+2. 优化路径重置功能，支持自定义面板路径输入
+3. 增加路径合法性校验机制
+4. 修复日志文件权限问题
+
+### 2024/12/28
+
 1. 同步官方版本v2.4.11
-2. wget命令删除-N参数
+2. 优化wget命令参数
+
+### 2024/12/21
+
+1. 同步官方版本v2.4.10
+
+### 2024/12/16
+
+1. 翻译中文菜单
+2. 移植基础功能框架
+3. 同步官方版本v2.4.9
+
+---
+
+## 功能详解
+
+### 日志管理（新增）
+
+- 实时查看服务运行日志
+- 支持日志文件分页查看
+- 提供日志清理功能
+- 错误日志高亮显示
+
+### 自定义路径重置（增强）
+
+```bash
+# 新功能示例
+请输入新的面板路径（默认：/ui）:
+➜ /custom-path
+
+[!] 路径已更新为 /custom-path
+[!] 请通过 https://your-domain/custom-path 访问面板
+```
+
+---
+
+> 更多功能持续开发中，欢迎提交Issue反馈使用体验
+
+```
+
+```
