@@ -1,13 +1,19 @@
 #!/sbin/openrc-run
 
+description="x-ui Service"
 command="/usr/local/x-ui/x-ui"
+command_args=""
 command_background=true
-pidfile="/run/x-ui.pid"
-description="Custom service for x-ui"
-procname="x-ui"
+directory="/usr/local/x-ui"
+pidfile="/var/run/x-ui.pid"
+name="x-ui"
+retry=5
+
 depend() {
     need net
+    after firewall
 }
-start_pre(){
-    cd /usr/local/x-ui
+
+start_pre() {
+    export XRAY_VMESS_AEAD_FORCED=false
 }
